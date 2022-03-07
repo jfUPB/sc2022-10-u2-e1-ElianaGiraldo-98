@@ -57,7 +57,7 @@ void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOu
         {
             if(arrIn1[i]==arrIn2[j])
             {
-                arrOut->pdata[contador]=arrIn1[i]->pdata;
+                arrOut->pdata[contador]=arrIn1[i]->pdata[i];
                 contador++;
             }
         }
