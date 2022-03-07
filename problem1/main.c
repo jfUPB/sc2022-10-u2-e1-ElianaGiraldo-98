@@ -36,24 +36,16 @@ void printArray(struct array *parr)
 
 void getArray(struct array *parr)
 {
-    int val;
-    char number[5];
-
-    if (fgets(number, 5, stdin) != NULL)
+    printf("Introduce el tamaño del arreglo:\n");
+    scanf("%d", &parr->size);
+    int tm=parr->size;
+    int pdata [tm];
+    for(int i=0; i<tm; i++)
     {
-        number[strlen(number) -1 ] = 0];
-        //printf("The string to convert is %s\n", number);
+        printf("\nEscriba el valor [%d] ", i);
+        scanf("%d", &parr->pdata[i]);
+        parr++;
     }
-    int successItems = sscanf(number,"%d",&val);
-    parr->pdata = malloc(sizeof(int)*parr->size);
-    for(int i=0; i<parr->size; i++)
-    {
-        if (fgets(number,5,stdin) != NULL) 
-        {
-            int successItemsd = sscanf(number, "%d", parr->pdata+I);
-
-        } 
-    }    
 }
 
 void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOut)
@@ -70,45 +62,26 @@ void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOu
     {
         size = arrIn2->size;
     }
-     int cambio[size];
+     
 
     for(int i = 0; vari1<size; vari1++) 
     { 
         successItems[i]=-1;
     } 
 int i=0;
-
-    for(int i=0; i<arrIn1->size;i++)
+int contador=0;
+    for(int i=0;i<arrIn1->size;i++)
     {
-        for(int j=0; j<arrIn2->size;j++)
+        for(int j=0;i<arrIn2->size;j++)
         {
-            if(arrIn1->pdata[i]==arrIn2->pdata[j]) 
+            if(arrIn1->pdata[i]==arrIn2->pdata[j])
             {
-                int condi = 0;
-                for(int k=0; vari3<size; k++)
-                {
-                    if(arrIn1->pdata[i]==successItemsd[k])
-                    {
-                       k = size;
-                        condi = 1;
-                    }
-                }
-                if(condi==0)
-                {
-                    successItemsd[i] = arrIn2->pdata[j];
-                    i++;
-                    arrOut->size++;
-                }
+                arrOut->pdata[contador]=arrIn1[i]->pdata[i];
+                contador++;
             }
         }
-    }
-        arrOut->pdata = malloc(sizeof(int)*arrOut->size);
-    
-    for(int i = 0; i<arrOut->size;i++)
-    {
-        *(arrOut->pdata+i) = successItemsd[i];
-    }
-}
+    } 
+               
 }
 void freeMemory(struct array *arr1, struct array *arr2, struct array *arr3)
 {
